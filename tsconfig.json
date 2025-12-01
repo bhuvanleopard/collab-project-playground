@@ -1,0 +1,65 @@
+{
+  "compilerOptions": {
+    /* =========================
+     * Runtime / module system
+     * ========================= */
+    "target": "ES2022",              // Modern JS, async/await, etc.
+    "module": "NodeNext",            // ESM for Node 18+/20+
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "types": ["node"],
+
+    /* =========================
+     * Project structure
+     * ========================= */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* =========================
+     * Imports / interop
+     * ========================= */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,       // allow `import x from "./x.json"`
+    "moduleDetection": "force",      // treat files as modules when they use import/export
+    "isolatedModules": true,         // plays nice with ts-node, swc, etc.
+
+    /* =========================
+     * Strictness / safety
+     * ========================= */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "useUnknownInCatchVariables": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+
+    /* =========================
+     * Emit / debugging
+     * ========================= */
+    "sourceMap": true,               // useful for debugging both dev & prod
+    "inlineSources": true,
+    "declaration": true,             // nice if you ever reuse code as a lib
+    "declarationMap": true,
+    "noEmitOnError": true,
+
+    /* =========================
+     * Paths (optional but handy)
+     * ========================= */
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
+}
